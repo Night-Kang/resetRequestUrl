@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>test html</title>
+  <!-- <script type="module" src="./httpRequestParams.js"></script> -->
+</head>
+<body>
+  <script type="module">
+    import { buildUrl, checkBaseUrl }  from './../dist/esm/index.js'
+    //1. 请求链接地址
+    var url = 'https://example.com/api?name=test&book=&author=null&price=undefined';
+    // var url = ''
+    // var newUrl = checkBaseUrl(url, {})
+    // console.log(newUrl)
+    //2. 请求入参
+    var userInfo = buildUrl(url, {hello:'box',world:'here',age:'',address: null, sex: undefined})
+    console.log(userInfo)
+  </script>
+</body>
+</html>

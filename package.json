@@ -1,0 +1,34 @@
+{
+  "name": "reset-request-url",
+  "version": "1.0.1",
+  "description": "Make sure request with right url.Especially the Params can't use null、‘’ and undefined.",
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "type": "module",
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "scripts": {
+    "debug:esm": "npm run build:hot:esm",
+    "build:hot:esm": "tsc -p tsconfig.es.json -w",
+    "build:hot:node": "tsc -p tsconfig.json -w",
+    "build": "npm run tsc:build && npm run babel:mjs &&  npm run babel:cjs && npm run commonjs",
+    "tsc:build": "rm -fr dist && tsc -p tsconfig.json && tsc -p tsconfig.es.json",
+    "build:publish": "npm run build && npm run publish",
+    "babel:mjs": "babel dist/esm --out-dir dist/esm",
+    "babel:cjs": "babel dist/cjs --out-dir dist/cjs",
+    "commonjs": "cp ./commonjs.json dist/cjs/package.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "buildUrl"
+  ],
+  "devDependencies": {
+    "@types/node": "^18.7.15",
+    "babel-cli": "^6.26.0"
+  },
+  "author": "Night",
+  "license": "MIT"
+}
