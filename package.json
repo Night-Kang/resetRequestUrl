@@ -1,6 +1,6 @@
 {
   "name": "reset-request-url",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Make sure request with right url.Especially the Params can't use null、‘’ and undefined.",
   "main": "./dist/cjs/index.js",
   "types": "./dist/cjs/index.d.ts",

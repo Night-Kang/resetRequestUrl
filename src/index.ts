@@ -62,7 +62,8 @@ export const checkBaseUrl = (baseUrl:string):string|ErrorConstructor => {
   if (!baseUrl.includes('?')) return baseUrl
   // 检测请求地址的合法性
   if (baseUrl.split('?').length>2) {
-    throw new Error("请求地址包含多个'?'，请确认请求地址规范");
+    // throw new Error("请求地址包含多个'?'，请确认请求地址规范");
+    return baseUrl
   }
 
   const queryParams: QueryParams = {};
